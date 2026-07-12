@@ -1,4 +1,4 @@
-# collie-js-template
+# collie-template
 
 A lightweight, boilerplate structure for COLLIE JS library, packed with a clean architecture and a built-in demo project to see it in action.
 
