@@ -24,19 +24,31 @@ function createElement(tagName, className) {
     return null;
   }
   const el = document.createElement(tagName);
-  if (className) el.classList.add(className);
+  if (className) {
+    className.split(' ').forEach(c => el.classList.add(c));
+  }
   return el;
-};
+}
 window.cE = createElement;
 
 
 function createState(initial) {
   let value = initial;
+  const subs = [];
+  
   return {
     get: () => value,
     set: (newVal, callback) => {
       value = newVal;
       if (callback) callback(value);
+      subs.forEach(fn => fn(value));
+    },
+    sub: (fn) => {
+      if (typeof fn !== 'function') {
+        console.warn("createState().sub() expects a function, got:", fn);
+        return;
+      }
+      subs.push(fn);
     }
   }
 };

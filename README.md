@@ -114,14 +114,14 @@ collie-js only uses `@import`, not `@forward`/`@use`.
 
 | Function | Description |
 |---|---|
-| `cE(tagName, className)` | Shorthand for `document.createElement`, with an optional class. |
+| `cE(tagName, className)` | Shorthand for `document.createElement`, with an optional class names. |
 | `sH(el, html)` | Sets `innerHTML` on an element. |
 | `tE(selector, context?)` | Shorthand for `querySelector`. Warns if nothing is found. |
 | `tEs(selector, context?)` | Shorthand for `querySelectorAll`. Warns if nothing is found. |
 | `renderIf(condition, html)` | Returns `html` if `condition` is truthy, else an empty string. |
 | `renderList(array, fn)` | Maps an array to HTML strings and joins them. |
 | `addEvent(el, event, fn, options?)` | Shorthand for `addEventListener`, with param validation. |
-| `createState(initial)` | Lightweight state container with `.get()` and `.set(newVal, callback)`. |
+| `createState(initial)` | Lightweight state container with `.get()`, `.set(newVal, callback)` and `sub(fn)`. |
 | `debounce(fn, delaySeconds)` | Delays invoking `fn` until `delaySeconds` have passed since the last call. |
 | `onHold(element, callback, holdDuration?)` | Fires `callback` after a long-press/hold, unified across mouse and touch. |
 | `cTC(target)` | Copies an element's `innerText` to the clipboard. |
