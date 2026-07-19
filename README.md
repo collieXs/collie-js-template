@@ -25,7 +25,6 @@ project-root/
 │
 ├── js/
 │   ├── collie/                  # the library itself
-│   │   ├── assemble.js          # bootstraps the library, attaches everything to window
 │   │   ├── funcs.js             # core utility functions
 │   │   └── iconObj.js           # SVG icon set — optional, delete if you prefer importing icons
 │   │
@@ -69,12 +68,10 @@ project-root/
 ## Getting Started
 
 1. Click **Use this template** and clone your new repo.
-2. Open `index.html`. Note the two script tags:
+2. Open `index.html`. Note the script tag:
    ```html
-   <script type="module" src="./js/collie/assemble.js"></script>
    <script type="module" src="./js/main.js"></script>
    ```
-   The library always loads first, in the `<head>`. Your app code (`main.js` for a static site, `app.js` for a PWA) loads second, at the bottom of `<body>`.
 3. Build your sections inside `js/layouts/sections/`, one folder per section.
 4. Don't need SCSS? Delete the `scss/` folder and link Tailwind or plain CSS directly in `index.html`.
 
